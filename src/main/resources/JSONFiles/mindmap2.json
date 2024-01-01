@@ -1,0 +1,53 @@
+{
+  "title": "Multi-Master Replication Algorithm",
+  "sections": [
+    {
+      "title": "Introduction",
+      "content": "Overview of the multi-master replication algorithm, emphasizing its application, advantages, and challenges."
+    },
+    {
+      "title": "Multi-master replication",
+      "content": "A replication technique favoring higher availability and performance, where all replicas are equal and can accept write requests.",
+      "subsections": [
+        {
+          "title": "Comparison with Single-Master Replication",
+          "content": "Multi-master allows concurrent write requests, unlike single-master which has a single leader node for serialization."
+        },
+        {
+          "title": "Conflict Resolution",
+          "content": "In multi-master replication, conflicts are inherent and must be resolved for operational consistency."
+        }
+      ]
+    },
+    {
+      "title": "Conflict resolution",
+      "content": "Different methods to resolve conflicts, which can be either eager (resolved during the write operation) or lazy (resolved later).",
+      "subsections": [
+        {
+          "title": "Exposing Conflict Resolution to Clients",
+          "content": "Clients are presented with multiple versions of data to resolve conflicts."
+        },
+        {
+          "title": "Last-Write-Wins Conflict Resolution",
+          "content": "The version with the latest timestamp, based on local clocks, is chosen."
+        },
+        {
+          "title": "Causality Tracking Algorithms",
+          "content": "Tracks causal relationships between requests to resolve conflicts."
+        }
+      ]
+    },
+    {
+      "title": "Advantages and Limitations",
+      "content": "Multi-master replication offers high availability and performance but can compromise data consistency."
+    },
+    {
+      "title": "Practical Application",
+      "content": "Used in scenarios like e-commerce shopping carts where availability and performance are prioritized over strict consistency."
+    },
+    {
+      "title": "Future Topics",
+      "content": "Further elaboration on time and order in the context of conflict resolution in subsequent chapters."
+    }
+  ]
+}

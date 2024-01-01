@@ -1,0 +1,59 @@
+{
+  "title": "Single-Master Replication Algorithm",
+  "sections": [
+    {
+      "title": "Introduction",
+      "content": "Learn about single-master replication, its practical application, advantages, and disadvantages."
+    },
+    {
+      "title": "Single-master replication",
+      "content": "A technique where a single node (leader or primary) receives all updates and propagates them to followers or secondaries.",
+      "subsections": [
+        {
+          "title": "Primary-backup replication",
+          "content": "Another name for single-master replication."
+        }
+      ]
+    },
+    {
+      "title": "Techniques for propagating updates",
+      "subsections": [
+        {
+          "title": "Synchronous replication",
+          "content": "Updates are acknowledged only after all replicas have updated; guarantees consistency and durability but slower for writes."
+        },
+        {
+          "title": "Asynchronous replication",
+          "content": "Node replies after updating locally, without waiting for other replicas; faster for writes but less consistent and durable."
+        }
+      ]
+    },
+    {
+      "title": "Advantages",
+      "content": "Simple to implement, scalable for read-heavy workloads, supports transactional operations."
+    },
+    {
+      "title": "Disadvantages",
+      "content": "Limited scalability for write-heavy workloads, trade-off between performance, durability, and consistency, potential network bottleneck."
+    },
+    {
+      "title": "Failover",
+      "content": "Process when a leader node crashes and a follower takes over.",
+      "subsections": [
+        {
+          "title": "Managing Failover",
+          "subsections": [
+            {
+              "title": "Manual Approach",
+              "content": "Operator selects new leader, safest but incurs downtime."
+            },
+            {
+              "title": "Automated Approach",
+              "content": "Follower nodes elect new leader, faster but riskier."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
